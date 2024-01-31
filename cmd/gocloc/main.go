@@ -7,8 +7,9 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/hhatto/gocloc"
 	"github.com/jessevdk/go-flags"
+
+	"github.com/timmattison/gocloc"
 )
 
 // Version is version string for gocloc command
@@ -29,12 +30,14 @@ const OutputTypeSloccount string = "sloccount"
 // OutputTypeJSON is JSON output format for --output-type option
 const OutputTypeJSON string = "json"
 
-const fileHeader string = "File"
-const languageHeader string = "Language"
-const commonHeader string = "files          blank        comment           code"
-const defaultOutputSeparator string = "-------------------------------------------------------------------------" +
-	"-------------------------------------------------------------------------" +
-	"-------------------------------------------------------------------------"
+const (
+	fileHeader             string = "File"
+	languageHeader         string = "Language"
+	commonHeader           string = "files          blank        comment           code"
+	defaultOutputSeparator string = "-------------------------------------------------------------------------" +
+		"-------------------------------------------------------------------------" +
+		"-------------------------------------------------------------------------"
+)
 
 var rowLen = 79
 

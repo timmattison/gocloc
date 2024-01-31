@@ -82,8 +82,10 @@ func (ls Languages) SortByCode() {
 	sort.Slice(ls, sortFunc)
 }
 
-var reShebangEnv = regexp.MustCompile(`^#! *(\S+/env) ([a-zA-Z]+)`)
-var reShebangLang = regexp.MustCompile(`^#! *[.a-zA-Z/]+/([a-zA-Z]+)`)
+var (
+	reShebangEnv  = regexp.MustCompile(`^#! *(\S+/env) ([a-zA-Z]+)`)
+	reShebangLang = regexp.MustCompile(`^#! *[.a-zA-Z/]+/([a-zA-Z]+)`)
+)
 
 // Exts is the definition of the language name, keyed by the extension for each language.
 var Exts = map[string]string{
